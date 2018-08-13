@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block head_title %}
+        Kichen {% if title %}
+            | {{ title }}
+        {% endif %}
+    {% endblock head_title %}</title>
+    {% block style %}
+        
+    {% endblock style %}
+    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/bootstrap-grid.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/bootstrap-reboot.min.css" %}'>
+    {% block head_links %}
+        
+    {% endblock head_links %}
+    <script src='{% static "js/jquery-3.3.1.min.js" %}'></script>
+    <script src='{% static "js/bootstrap.min.js" %}'></script>
+    <script src='{% static "js/bootstrap.bundle.min.js" %}'></script>
+</head>
+<body>
+    {% block content %}
+        
+    {% endblock content %}
+    {% block scripts %}
+        
+    {% endblock scripts %}
+</body>
+</html>

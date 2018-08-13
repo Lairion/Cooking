@@ -1,0 +1,58 @@
+
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<form action="{% url 'recipes_list' %}" class="form-inline" method="get" accept-charset="utf-8">
+				{{ filter.form|crispy}}
+				<button type="submit" class="btn btn-primary">{% trans "Submit" %}</button>
+			</form>
+			<!--<form action="{% url 'recipes_list' %}" class="form-group form-inline align-items-center" method="get" accept-charset="utf-8">
+		      <input class="form-control" name="name" type="text" placeholder="Поиск">
+		      <select class="form-control" name="category_recipe">
+		      	<option value=""></option>
+		      	{% for category in categories %}
+		      		<option value="{{category.id}}" {% if category.id is request.GET.category_recipe %}
+		      		    selected="selected" 
+		      		{% endif %}>{{category.name}}</option>
+		      	{% endfor %}
+		      </select>
+		      <button class="form-control btn btn-primary" type="submit">
+		        Поиск
+		      </button>
+		    </form>-->
+		</div>
+	</div>
+	<div class="row">
+		{% for recipe in filter.qs %}
+        <div class="col-4">
+            <div class="card">
+                <img class="card-img-top" src="{{recipe.image.url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{recipe.name}}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Категория {{recipe.category_recipe}}</li>
+                    <li class="list-group-item">Время {{recipe.hours}}</li>
+                    <li class="list-group-item">Количество порций {{recipe.count}}</li>
+                    <li class="list-group-item">Сложность {{recipe.level}}</li>
+                </ul>
+                <div class="card-body">
+                	<a href="{{ recipe.get_absolute_url }}">
+                		<button class="btn btn-primary">Подробней</button>
+                	</a>
+                    
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+	
+
+
+{% endblock content %}

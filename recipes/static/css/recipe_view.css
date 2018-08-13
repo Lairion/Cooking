@@ -1,0 +1,180 @@
+body {
+  background: #fff;
+  font-size: 100%;
+  line-height: 1.75;
+  font-family: Roboto;
+  color: #333;
+  padding-bottom: 3em;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.cf:after {
+  clear: both;
+}
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1em 2em;
+}
+.container > div {
+  float: left;
+  padding-right: 20px;
+}
+.ingredients {
+  width: 37%;
+  margin-right: 3%;
+}
+.ingredients li {
+  font-family: "Roboto Condensed", sans-serif;
+  list-style-type: none;
+}
+.instructions {
+  width: 60%;
+}
+.details {
+  width: 100%;
+  background: #fff;
+  padding: 1em 0 2em;
+}
+dl,
+dt,
+dd {
+  float: left;
+}
+dl {
+  width: 33%;
+  padding: .5em 0;
+}
+dt {
+  font-family: "Roboto Condensed";
+  padding-right: 5px;
+  color: #C15B45;
+}
+dd {
+  color: #000;
+}
+h1 {
+  font-family: "Roboto Slab";
+  font-size: 3.5em;
+  line-height: 1;
+  color: #fff;
+  margin: 0;
+  padding: 1em 0;
+  display: block;
+  font-weight: 100;
+}
+.recipe-title {
+  background: #C15B45;
+}
+h2 {
+  font-family: Roboto;
+  font-size: 2em;
+  line-height: 1;
+  margin: 1em 0 .5em;
+  padding-bottom: .25em;
+  font-weight: 400;
+  color: #C15B45;
+  border-bottom: 1px solid #db9e91;
+}
+ol {
+  counter-reset: my-counter;
+  list-style-type: none;
+}
+ol li {
+  counter-increment: my-counter;
+  margin-bottom: 1.5em;
+}
+
+/* do the shopping list */
+.panel-two {
+  clear: both;
+}
+.shopping-list {
+  margin-top: 2em;
+}
+.shopping-list li {
+  height: 44px;
+  border-bottom: 1px dotted #E5A36F;
+  padding-top: 6px;
+  list-style-type: none;
+}
+.delme {
+  text-decoration: line-through;
+}
+.panel {
+  display: none;
+}
+/* do the tabs */
+.simpletab {
+  background: #E5A36F;
+  margin-bottom: 3em;
+}
+.simpletabs {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: .5em 2em 0;
+}
+.simpletabs li {
+  float: left;
+  width: 32%;
+  height: 48px;
+  padding-top: 8px;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px 4px 0 0;
+  transition: all .5s linear;
+  cursor: pointer;
+  margin-right: 1%;
+  background: #e39d66;
+  list-style-type: none;
+}
+.simpletabs li:hover {
+  background: #dd8744;
+}
+.simpletabs li.selected {
+  background: #fff;
+  color: #dd8744;
+}
+.simpletab-wrapper {
+  background: #fff;
+}
+/* do the cooking list */
+.cooking-list {
+  counter-reset: cook-counter;
+  list-style-type: none;
+  margin: 2em auto 0;
+  font-size: 1.75em;
+}
+.cooking-list li {
+  counter-increment: cook-counter;
+  margin-bottom: 1.5em;
+  transition: all .5s linear;
+}
+.fade-me {
+  color: #ddd;
+  transition: all .5s linear;
+}
+@media screen and (max-width: 800px) {
+  .container > div {
+    width: 100%;
+    padding-right: 0;
+  }
+  dl {
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+  dt {
+    padding-right: 10px;
+  }
+}

@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block head_links %}
+    <link rel="stylesheet" href='{% static "css/recipe_view.css" %}'>
+{% endblock head_links %}
+{% block content %}
+
+<div class="recipe-title">
+  <div class="container">
+    <h1 class="saver" contenteditable="true">{{recipe.name}}</h1>
+  </div>
+</div>
+
+<div class="simpletab">
+  <ul class="simpletabs cf">
+    <li>Full</li>
+    <li>Shop</li>
+    <li>Cook</li>
+  </ul>
+  <div class="simpletab-wrapper">
+
+    <div class="panel panel-one">
+
+      <div class="details cf">
+        <div class="container">
+          <h2>Details</h2>
+          <dl>
+            <dt>Время приготовления: </dt>
+            <dd id="total-time" class="saver" contenteditable="true">{{recipe.hours}}</dd>
+          </dl>
+          <dl>
+            <dt>Количество порций: </dt>
+            <dd class="saver" contenteditable="true">{{recipe.count}}</dd>
+          </dl>
+          <dl>
+            <dt>Сложность: </dt>
+            <dd id="skill-level" class="saver" contenteditable="true">{{recipe.level}}</dd>
+          </dl>
+        </div>
+      </div>
+
+
+      <div class="container">  
+
+        <div class="ingredients">
+          <h2>Ингредиенты</h2>
+          <ul id="ingredients-list" class="saver" contenteditable="true">
+          	{% for ingredient in recipe.ingredients.all %}
+          		<li>{{ingredient}} {{ingredient.full_display}}</li>
+          	{% endfor %}
+            
+          </ul>
+        </div>
+
+        <div class="instructions">
+          <h2>Описание</h2>
+          <ol id="method-list" class="saver" contenteditable="true">
+            <li>{{recipe.description}}</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-two">
+      <div class="container">
+        <ul class="shopping-list">
+          <li>Item 1</li>
+        </ul>
+      </div> 
+    </div>
+
+    <div class="panel panel-three">
+      <div class="container">
+        <ol class="cooking-list">
+          <li>Item 1</li>
+        </ol>
+      </div> 
+    </div>
+
+
+  </div>
+
+</div>
+    
+{% endblock content %}
+{% block scripts %}
+    <script src='{% static "js/recipe_view.js" %}'></script>
+{% endblock scripts %}
