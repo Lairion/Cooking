@@ -1,1 +1,1 @@
-web: gunicorn familycook.wsgi
+web: gunicorn familycook.wsgi --log-file -
