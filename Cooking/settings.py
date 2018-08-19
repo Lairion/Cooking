@@ -137,8 +137,8 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_ROOT, "main_static"),
-    os.path.join(PROJECT_ROOT, "recipes","static"),
+    os.path.join(BASE_DIR, "main_static"),
+    os.path.join(BASE_DIR, "recipes","static"),
 ]
 MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
