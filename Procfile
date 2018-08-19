@@ -1,1 +1,1 @@
-web: gunicorn familycooking.wsgi --log-file -
+web: gunicorn Cooking.wsgi --log-file -
