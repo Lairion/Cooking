@@ -66,8 +66,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-        os.path.join(BASE_DIR, 'main_templates'),
-        os.path.join(BASE_DIR, 'recipes','templates')],
+        os.path.join(PROJECT_ROOT, 'main_templates'),
+        os.path.join(PROJECT_ROOT, 'recipes','templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -137,8 +137,8 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "main_static"),
-    os.path.join(BASE_DIR, "recipes","static"),
+    os.path.join(PROJECT_ROOT, "main_static"),
+    os.path.join(PROJECT_ROOT, "recipes","static"),
 ]
 MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
