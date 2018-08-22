@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django_filters',
     'crispy_forms',
     'dropbox',
-    'storage',
+    'storages',
     'recipes',
 ]
 
