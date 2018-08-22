@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django_filters',
     'crispy_forms',
-    'django_dropbox_storage',
+    'django_dropbox',
     'recipes',
 ]
 
