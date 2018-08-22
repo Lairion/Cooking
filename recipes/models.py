@@ -1,5 +1,8 @@
 from django.db import models
 from django.urls import reverse
+# from django_dropbox_storage.storage import DropboxStorage
+
+# DROPBOX_STORAGE = DropboxStorage()
 # Create your models here.
 LEVEL_COOK = (('Легко','Легко'),('Легко','Средняя'),('Легко','Тяжёлая'))
 QUANTITY_TYPE =(('г','г'),('шт','шт'),('мл','мл'),(None,"Нет меры")) 
@@ -23,7 +26,9 @@ class Recipe(models.Model):
         on_delete=models.PROTECT, 
         related_name='recipes')
     description = models.TextField(max_length=3000)
-    image = models.ImageField(upload_to="recipe_main_images/%Y/%m/%d/")
+    image = models.ImageField(upload_to="recipe_main_images/%Y/%m/%d/",
+        # storage=DROPBOX_STORAGE
+        )
     level = models.CharField(max_length=8, 
         choices=LEVEL_COOK,
         default="Легко" )
