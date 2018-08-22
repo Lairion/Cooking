@@ -26,9 +26,7 @@ class Recipe(models.Model):
         on_delete=models.PROTECT, 
         related_name='recipes')
     description = models.TextField(max_length=3000)
-    image = models.ImageField(upload_to="recipe_main_images/%Y/%m/%d/",
-        # storage=DROPBOX_STORAGE
-        )
+    image = models.ImageField(upload_to="recipe_main_images/%Y/%m/%d/")
     level = models.CharField(max_length=8, 
         choices=LEVEL_COOK,
         default="Легко" )
