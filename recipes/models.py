@@ -66,7 +66,7 @@ class IngredientTemplate(models.Model):
         return '%s,%s' % (self.name,self.quatity)
 
     class Meta:
-        pass 
+        ordering = ["name"] 
 
 class Ingredient(models.Model):
     """
