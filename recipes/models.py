@@ -15,7 +15,7 @@ class CategoryRecipe(models.Model):
     def __str__(self):
         return self.name
     class Meta:
-        pass
+        ordering = ["name"]
 
 class Recipe(models.Model):
     """
@@ -44,7 +44,7 @@ class Recipe(models.Model):
         return '{} ч {} мин '.format(str(time//60) if time>=60 else 0,str(time%60))
     
     class Meta:
-        pass
+        ordering = ["name"]
 
 class RecipeImage(models.Model):
     """
