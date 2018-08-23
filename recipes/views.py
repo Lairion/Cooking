@@ -1,11 +1,8 @@
 from django.shortcuts import render
 from .models import Recipe,CategoryRecipe
-import django_filters
+from .filters import RecipeFilter
 # Create your views here.
-class RecipeFilter(django_filters.FilterSet):
-    class Meta:
-        model = Recipe
-        fields = ['name','category_recipe','count','time']
+
 class RecipeViews(object):
     """docstring for RecipeView"""
     @staticmethod
