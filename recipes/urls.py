@@ -14,7 +14,7 @@ urlpatterns = [
     path('ingeredient_templates/',
         IngredientTemplateAutocomplete.as_view(),
         name="ing_temp_comp"
-        )
+        ),
     path('recipes_categories/',
         CategoryRecipeAutocomplete.as_view(),
         name="recipes_categories"
