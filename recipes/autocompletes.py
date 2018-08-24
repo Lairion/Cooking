@@ -6,7 +6,7 @@ from .models import IngredientTemplate,CategoryRecipe
 class IngredientTemplateAutocomplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
         # Don't forget to filter out results depending on the visitor !
-        if not self.request.user.is_authenticated():
+        if not self.request.user.is_authenticated:
             return IngredientTemplate.objects.none()
 
         qs = IngredientTemplate.objects.all()
@@ -19,7 +19,7 @@ class IngredientTemplateAutocomplete(autocomplete.Select2QuerySetView):
 class CategoryRecipeAutocomplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
         # Don't forget to filter out results depending on the visitor !
-        if not self.request.user.is_authenticated():
+        if not self.request.user.is_authenticated:
             return CategoryRecipe.objects.none()
 
         qs = CategoryRecipe.objects.all()
