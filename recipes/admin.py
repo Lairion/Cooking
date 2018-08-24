@@ -4,6 +4,7 @@ from .models import (RecipeImage,
     CategoryRecipe,
     Ingredient,
     IngredientTemplate)
+from .form import IngredientForm,RecipeForm
 
 class IngerdientTemplateAdmin(admin.ModelAdmin):
     '''
@@ -29,6 +30,7 @@ class IngredientInline(admin.TabularInline):
         Tabular Inline View for Ingredient
     '''
     model = Ingredient
+    form = IngredientForm
 
 
 class RecipeImageInline(admin.TabularInline):
@@ -49,6 +51,7 @@ class RecipeAdmin(admin.ModelAdmin):
         RecipeImageInline,
     ]
     search_fields = ('name',)
+    form = RecipeForm
 
 admin.site.register(Recipe, RecipeAdmin)
 

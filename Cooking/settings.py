@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'dropbox',
     'storages',
     'recipes',
+    'dal',
+    'dal_select2',
 ]
 
 MIDDLEWARE = [
