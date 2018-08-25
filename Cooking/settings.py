@@ -33,6 +33,9 @@ DEBUG = True
 
 DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
 
+DROPBOX_OAUTH2_TOKEN = os.environ.get('DROPBOX_OAUTH2_TOKEN', None)
+DROPBOX_ROOT_PATH = os.environ.get('DROPBOX_ROOT_PATH', None)
+
 ALLOWED_HOSTS = []
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -137,6 +140,8 @@ DATABASES['default'].update(dj_database_url.config(conn_max_age=500, ssl_require
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+SECRET_KEY = os.environ.get('SECRET_KEY', None)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
