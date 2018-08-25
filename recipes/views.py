@@ -22,7 +22,7 @@ class RecipeViews(object):
     def recipe_view(request,id):
         recipe = Recipe.objects.get(id=id)
         context = {
-            'title':"Recipes list",
+            'title':recipe.name,
             'recipe': recipe
         }
         return render(request,"recipe_view.html",context)
