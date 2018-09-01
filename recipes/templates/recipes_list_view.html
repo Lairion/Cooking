@@ -1,7 +1,7 @@
  {% extends "base.html" %} {% load i18n %} {% load crispy_forms_tags %} {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-4">
+        <div class="col-3">
             <form action="{% url 'recipes_list' %}" method="get" accept-charset="utf-8">
                 {{ filter.form|crispy}}
                 <button type="submit" class="btn btn-primary">{% trans "Submit" %}</button>
@@ -21,7 +21,7 @@
               </button>
             </form>-->
         </div>
-        <div class="col-8">
+        <div class="col-9">
             <div class="row">
                 {% for recipe in filter.qs %}
                 <div class="col-4">
